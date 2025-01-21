@@ -1,24 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="bg-background-light dark:bg-background-dark px-6 py-4 flex items-center justify-between">
-      <div className="container mx-auto">
-        <h1 className="text-2xl font-bold">My Portfolio</h1>
+      <div className="container mx-auto flex items-center">
+        <Link to="/">
+          <img src="../assets/logo_light.png" alt="Logo" className="h-8 w-8 mr-2" />
+        </Link>
+        <h1 className="text-2xl font-bold">ESKAYY</h1>
       </div>
-      <nav>
-        <a href="#home" className="text-text-light dark:text-text-dark hover:underline">
+      <nav className="flex space-x-4">
+        <Link to="/" className="text-text-light dark:text-text-dark hover:underline">
           Home
-        </a>
-        <a href="#about" className="text-text-light dark:text-text-dark hover:underline">
+        </Link>
+        <Link to="/about" className="text-text-light dark:text-text-dark hover:underline">
           About
-        </a>
-        <a href="#projects" className="text-text-light dark:text-text-dark hover:underline">
+        </Link>
+        <Link to="/projects" className="text-text-light dark:text-text-dark hover:underline">
           Projects
-        </a>
-        <a href="#contact" className="text-text-light dark:text-text-dark hover:underline">
+        </Link>
+        <Link to="/contact" className="text-text-light dark:text-text-dark hover:underline">
           Contact
-        </a>
+        </Link>
       </nav>
 
       <button
@@ -27,8 +31,7 @@ const Header = () => {
           document.documentElement.classList.toggle("dark");
           const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
           localStorage.setItem("theme", newTheme);
-        }
-      }
+        }}
       >
         Toggle Theme
       </button>
