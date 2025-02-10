@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx,css}", // Include all component files
+    "./src/**/*.{js,jsx,ts,tsx}", // Include all component files
   ],
   darkMode: 'class',
   theme: {
@@ -32,6 +32,10 @@ module.exports = {
           dark: '#8B0000',
         },
       },
+      backgroundImage: {
+        "light-bg": "url('../assets/logo_light.png')",
+        "dark-bg": "url('../assets/logo_dark.png')",
+      }
     },
   },
   plugins: [],
